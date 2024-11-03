@@ -5,6 +5,7 @@ metadata:
     app: nginx
     env: dev
   name: nginx
+  namespace: dev
 spec:
   replicas: 2
   selector:
