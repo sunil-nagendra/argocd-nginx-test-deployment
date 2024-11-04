@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'git@github.com:sunil-nagendra/argocd-nginx-test-deployment.git'
     targetRevision: HEAD
-    path: '.'
+    path: 'helm'
     helm:
       valueFiles:
         - configs/values-staging.yaml
