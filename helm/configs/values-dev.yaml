@@ -1,0 +1,4 @@
+image:
+  tag: nginx:alpine
+replicaCount: 1
+

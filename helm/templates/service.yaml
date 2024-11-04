@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "custom-nginx.fullname" . }}
+  labels:
+    {{- include "custom-nginx.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: 80
+  selector:
+    {{- include "custom-nginx.selectorLabels" . | nindent 4 }}
+

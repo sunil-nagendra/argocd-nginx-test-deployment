@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-staging-helm
+  namespace: argocd
+spec:
+  project: staging
+  source:
+    repoURL: 'git@github.com:sunil-nagendra/argocd-nginx-test-deployment.git'
+    targetRevision: HEAD
+    path: '.'
+    helm:
+      valueFiles:
+        - configs/values-staging.yaml
+  destination:
+    server: 'https://192.168.91.245:6443'
+    namespace: staging
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+

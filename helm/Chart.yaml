@@ -1,0 +1,6 @@
+apiVersion: v2
+name: custom-nginx
+description: A Helm chart for NGINX deployment using the nginx:alpine image
+version: 0.1.0
+appVersion: "1.17.10"
+
